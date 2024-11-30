@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-shop na trička</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const music = document.getElementById('background-music');
+        const playIcon = document.getElementById('play-icon');
+        const pauseIcon = document.getElementById('pause-icon');
+
+        // Zkontrolujeme, zda je načtený audio element a ikony
+        if (music && playIcon && pauseIcon) {
+            playIcon.addEventListener('click', function() {
+                if (music.paused) {
+                    music.play();  // Spustí hudbu
+                    playIcon.style.display = 'none';  // Skryje ikonu pro zapnutí
+                    pauseIcon.style.display = 'inline';  // Zobrazí ikonu pro pozastavení
+                }
+            });
+
+            pauseIcon.addEventListener('click', function() {
+                if (!music.paused) {
+                    music.pause();  // Pauzuje hudbu
+                    playIcon.style.display = 'inline';  // Zobrazí ikonu pro zapnutí
+                    pauseIcon.style.display = 'none';  // Skryje ikonu pro pozastavení
+                }
+            });
+        } else {
+            console.error("Audio element nebo ikony nebyly nalezeny!");
+        }
+    });
+</script>
+
+
+<body>
+    <header>
+       <header img> <img src="assets/BODYMOLD.png" alt="Logo E-shopu"> </header img>
+        <div class="audio-player">
+            <audio id="background-music" loop>
+                <source src="assets/music bm.mp3" type="audio/mp3">
+                Váš prohlížeč nepodporuje audio element.
+            </audio>
+            <!-- Ikona pro zapnutí hudby -->
+            <img src="assets/pause-icon.png" id="play-icon" alt="Zapnout hudbu" class="audio-icon">
+            <!-- Ikona pro vypnutí hudby -->
+            <img src="assets/play-icon.png" id="pause-icon" alt="Vypnout hudbu" class="audio-icon" style="display: none;">
+    </header>
+    <main>
+
+        <video autoplay muted loop id="background-video">
+            <source src="assets/background bm.mp4" type="video/mp4">
+            Váš prohlížeč nepodporuje video tag.
+        </video>
+        
+        <section class="products">
+            
+            <div class="product">
+                <div class="shirt">
+                    <img src="assets/bm_SHIRT.png" alt="Přední strana trička" class="front">
+                    <img src="assets/bm_SHIRT_back.png" alt="Zadní strana trička" class="back">
+                </div>
+                <h2>BM</h2>
+                <p>500 $</p>
+                <button>specs</button>
+            </div>
+
+            <div class="product">
+                <div class="shirt">
+                    <img src="assets/triko_flooded_white.png" alt="Přední strana trička" class="front">
+                    <img src="assets/triko_flooded_white_back.png" alt="Zadní strana trička" class="back">
+                </div>
+                <h2>FLOODED WHITE</h2>
+                <p>500 $</p>
+                <button>Detail </button>
+            </div>
+
+            <div class="product">
+                <div class="shirt">
+                    <img src="assets/triko_flooded_black.png" alt="Přední strana trička" class="front">
+                    <img src="assets/triko_flooded_black_back.png" alt="Zadní strana trička" class="back">
+                </div>
+                <h2>FLOODED BLACK</h2>
+                <p>500 $</p>
+                <button>specs</button>
+            </div>
+            
+    
+        </section>
+
+        
+    </main>
+    <footer>
+        <p>© 2024 FUSARI. Všechna práva vyhrazena.</p>
+    </footer>
+</body>
+</html>

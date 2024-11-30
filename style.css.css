@@ -1,0 +1,161 @@
+/* Obecné nastavení */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('assets/IMAG0163.JPG'); /* Cesta k tvému obrázku */
+    background-size: cover;       /* Obrázek se roztáhne přes celou stránku */
+    background-position: center;  /* Obrázek bude zarovnán na střed */
+    background-attachment: fixed; /* Pozadí zůstane fixované při scrollování */
+    margin: 0;                    /* Odstraní výchozí okraje */
+    padding: 0;                   /* Odstraní výchozí výplně */
+}
+
+#background-video {
+    position: fixed;           /* Fixuje video na pozadí */
+    top: 0;
+    left: 0;
+    width: 100%;               /* Zajistí, že video pokryje celou šířku */
+    height: 100%;              /* Zajistí, že video pokryje celou výšku */
+    object-fit: cover;         /* Upraví velikost videa, aby pokrylo celou plochu */
+    z-index: -1;               /* Umístí video pod ostatní obsah */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;             /* Zajistí, že stránka pokryje celou výšku */
+}
+
+
+
+/* Hlavička */
+header {
+    background-image: url('assets/bm_BACKGROUND.jpg'); /* Cesta k obrázku */
+    background-size: cover;       /* Obrázek pokryje celý prostor */
+    background-position: center;  /* Zarovnání obrázku na střed */
+    text-align: center;
+    height: 500px;              /* Nastavení výšky hlavičky */
+    
+}
+
+/* Umístění audio ikon do pravého rohu hlavičky */
+.audio-player {
+    position: absolute;
+    top: 20px;          /* Ikony budou vzdálené 20px od horního okraje */
+    left: 50%;          /* Umístí ikony do středu horizontálně */
+    transform: translateX(-50%); /* Posune ikony zpět o polovinu jejich šířky, aby byly přesně ve středu */
+    text-align: center;
+}
+
+.audio-icon {
+    width: 500px;
+    height: 500px;  
+    object-fit: contain;    /* Nastaví velikost ikon */
+    cursor: pointer;  /* Změní kurzor na ruku při najetí na ikonu */
+    transition: opacity 0.3s ease-in-out;
+    margin-left: 10px; /* Mezera mezi ikonami */
+}
+
+
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+header img {
+    height: 800px;
+    width: 100%; /* Nastav maximální šířku */
+       /* Zachová proporce obrázku */
+    display: block;   /* Centrování v bloku */
+    margin: 0 auto;   /* Zarovnání na střed */
+}
+
+
+/* Hlavní obsah */
+main {
+    padding: 2rem;
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4rem;
+    justify-content: center;
+}
+
+/* Základní styl pro produkt */
+.product {
+    background-color: rgb(0, 0, 0);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 250px;
+    text-align: center;
+    height: 400px;
+    overflow: hidden; /* Skryje části obrázku, které vypadnou mimo hranice divu */
+    transition: transform 0.3s ease-in-out;
+}
+
+.shirt {
+    position: relative;
+    width: 100%;
+    height: auto;
+    transform-style: preserve-3d; /* Umožňuje otáčení v 3D prostoru */
+    transition: transform 0.6s ease-in-out; /* Doba trvání otáčení */
+}
+
+.front, .back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    backface-visibility: hidden; /* Skryje zadní stranu obrázku při rotaci */
+}
+
+.back{
+    transform: rotateY(180deg); /* Otočí zadní stranu obrázku */
+}
+/* Hover efekt - otočení obrázku */
+.product:hover .shirt {
+    transform: rotateY(180deg); /* Otočí obrázek o 180° kolem osy Y */
+}
+
+/* Styl pro tlačítko a text */
+.product h2 {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+    color: bisque;
+}
+
+.product p {
+    font-size: 1.2rem;
+    color: #fdf6f6;
+    margin-top: 260px;
+}
+
+.product button {
+    background-color: bisque;
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.product button:hover {
+    background-color: #0056b3;
+}
+
+
+/* Paticka */
+footer {
+    background-image: url('assets/bm_BACKGROUND.jpg'); /* Cesta k obrázku */
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
